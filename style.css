@@ -1,0 +1,408 @@
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: url("tan-hoa-village.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1526779259212-6bfa22f5f38b")
+    no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 { font-size: 52px; }
+.hero p { font-size: 20px; margin: 15px 0 25px; }
+
+.btn {
+    background: #2e8b57;
+    padding: 14px 30px;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #1a5c38;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(46, 139, 87, 0.4);
+}
+
+/* NAV */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 100;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2e8b57;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
+    position: relative;
+}
+
+nav a:hover {
+    color: #1a5c38;
+    background: rgba(46, 139, 87, 0.1);
+    transform: translateY(-2px);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #2e8b57;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+.lang {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+}
+
+.lang button {
+    border: none;
+    background: #2e8b57;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.lang button.active {
+    background: #1a5c38;
+    box-shadow: 0 0 0 2px white;
+}
+
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 20px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    text-align: center;
+    color: #2e8b57;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    background: rgba(255, 255, 255, 1);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    position: relative;
+}
+
+video {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 15px;
+    background: #1e1e1e;
+    object-fit: contain;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 200px;
+}
+
+.video-fallback {
+    display: none;
+    margin-top: 12px;
+    padding: 16px;
+    background: #fff3cd;
+    border-radius: 12px;
+    color: #856404;
+    text-align: center;
+}
+
+iframe {
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
+    border: none;
+}
+
+footer {
+    background: rgba(30, 30, 30, 0.95);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+footer a:hover {
+    color: #2e8b57;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE & TABLET
+   ============================================ */
+
+/* Tablet (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .hero h1 { font-size: 42px; }
+    .hero p { font-size: 18px; }
+    
+    section {
+        padding: 50px 20px;
+    }
+    
+    section h2 {
+        font-size: 28px;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .features {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    /* Body background optimization for mobile */
+    body {
+        background-attachment: scroll;
+    }
+    
+    /* Hero */
+    .hero {
+        height: 70vh;
+        padding: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+        margin: 10px 0 20px;
+    }
+    
+    .btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+    
+    /* Navigation */
+    nav {
+        flex-wrap: wrap;
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    nav a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+    
+    .lang {
+        position: static;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .lang button {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    
+    /* Sections */
+    section {
+        padding: 40px 15px;
+        margin: 20px 10px;
+        border-radius: 12px;
+    }
+    
+    section h2 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+    
+    /* Features/Cards */
+    .features {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    /* Gallery */
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .gallery img {
+        height: 250px;
+    }
+    
+    /* Video */
+    video {
+        min-height: 180px;
+        border-radius: 12px;
+    }
+    
+    /* Map/Iframe */
+    iframe {
+        height: 300px;
+        border-radius: 12px;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+    
+    footer a {
+        display: block;
+        margin-top: 8px;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 26px;
+    }
+    
+    .hero p {
+        font-size: 14px;
+    }
+    
+    nav a {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+    
+    section {
+        padding: 30px 12px;
+        margin: 15px 8px;
+    }
+    
+    section h2 {
+        font-size: 20px;
+    }
+    
+    .gallery img {
+        height: 200px;
+    }
+    
+    iframe {
+        height: 250px;
+    }
+    
+    footer {
+        font-size: 12px;
+        padding: 12px;
+    }
+}
+
+/* Large Desktop (min-width: 1200px) */
+@media screen and (min-width: 1200px) {
+    section {
+        max-width: 1200px;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .features {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
