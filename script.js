@@ -38,4 +38,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         }
     }
+
+    // Tạo mã QR mở trang web Hang Tú Làn
+    var qrImg = document.getElementById("qr-image");
+    if (qrImg) {
+        var url = "https://nguyenlam-011.github.io/tulancave-website/#about";
+        var api = "https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=";
+        qrImg.src = api + encodeURIComponent(url);
+    }
 });
